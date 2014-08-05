@@ -1,0 +1,38 @@
+#Questo è il file configuazione del MediaLooper.
+#Inserisci i parametri delle varie impostazioni 
+#all'interno delle virgolette.
+#DOPO AVER IMPOSTATO IL FILE SALVA UNA COPIA SUL PC.
+#OGNI VOLTA CHE VORRAI MODIFICARE I SETTAGGI DOVRAI
+#COPIARLO NUOVAMENTE SUL PENDRIVE DENTRO LA CARTELLA 
+#"MEDIALOOPER" PER AGGIORNARE LE IMPOSTAZIONI DI SISTEMA
+
+AUTOSTART="1"
+
+#Imposta la modalità d'avvio del sistema: 
+#"0" ---> interattiva: avvia la riga di comando (per la modalità grafica autenticarsi
+# con nome utente "pi" e password "video" quindi lanciare il comando "startx")
+#"1" ---> automatica: avvio del demone medialooper
+
+NUMEROTRACCE="2"
+
+#Definice il numero di tracce audio prima che
+#venga riprodotto un video
+
+TRANSIZIONE="9"
+
+#Definisce il tempo di transizione delle 
+#immagini compreso fra "1" secondo e "9" secondi
+
+SYNC="1"
+
+#Definisce se attivare la sincronizazione da server ftp
+#"0" disattivato- "1" attivato
+
+HOST="server.ftp.it"
+USER="nome_utente"
+PASS="password"
+IND="cartella/sottocartella"
+
+#Questi sono i dati relativi al server ftp. la variabile 
+#IND indica il percorso che, sul server, conduce alla cartella "medialooper".
+
