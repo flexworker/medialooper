@@ -18,7 +18,7 @@ NUMEROTRACCE="2"
 #Definice il numero di tracce audio prima che
 #venga riprodotto un video
 
-TRANSIZIONE="9"
+TRANSIZIONE="8"
 
 #Definisce il tempo di transizione delle 
 #immagini compreso fra "1" secondo e "9" secondi
