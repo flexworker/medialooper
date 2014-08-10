@@ -3,36 +3,50 @@
 #all'interno delle virgolette.
 #DOPO AVER IMPOSTATO IL FILE SALVA UNA COPIA SUL PC.
 #OGNI VOLTA CHE VORRAI MODIFICARE I SETTAGGI DOVRAI
-#COPIARLO NUOVAMENTE SUL PENDRIVE DENTRO LA CARTELLA 
-#"MEDIALOOPER" PER AGGIORNARE LE IMPOSTAZIONI DI SISTEMA
-
-AUTOSTART="1"
+#COPIARLO NUOVAMENTE SUL PENDRIVE E IL SISTEMA SI AGGIORNERA'
 
 #Imposta la modalità d'avvio del sistema: 
 #"0" ---> interattiva: avvia la riga di comando (per la modalità grafica autenticarsi
 # con nome utente "pi" e password "video" quindi lanciare il comando "startx")
 #"1" ---> automatica: avvio del demone medialooper
 
-NUMEROTRACCE="2"
+AUTOSTART="1"
+
+#Imposta il nome del sistema che, se la sinconizzazione è abilitata, corrisponde al nome della cartella #mirror. Per evitare malfunzionamenti occorre ESCLUDERE L'USO DI CARATTERI SPECIALI E SPAZI.
+
+NAME="nome_sistema"
 
 #Definice il numero di tracce audio prima che
 #venga riprodotto un video
 
-TRANSIZIONE="8"
+NUMEROTRACCE="2"
 
-#Definisce il tempo di transizione delle 
-#immagini compreso fra "1" secondo e "9" secondi
+#Definisce l'ora, in formato 24 ore e senza marcatori fra ore e minuti, 
+#in cui la seconda playlist audio si sostituisce alla prima.
+#Per disabilitare inserire il valore 9999
 
-SYNC="1"
+SECONDA=9999
+
+#Definisce l'ora, in formato 24 ore e senza marcatori fra ore e minuti, 
+#in cui la terza playlist audio si sostituisce alla seconda. 
+#Per disabilitare inserire il valore 9999
+
+TERZA=9999
+
+#Definisce il tempo, espresso in secondi, di transizione delle immagini
+
+TRANSIZIONE="10"
 
 #Definisce se attivare la sincronizazione da server ftp
 #"0" disattivato- "1" attivato
 
+SYNC="1"
+
+#Questi sono i dati relativi al server ftp. la variabile 
+#IND indica il percorso che, sul server, conduce alle cartelle dei singoli loopers.
+#La cartella di riferimento per questo dispositivo è definita dalla varibile NOME. 
+
 HOST="server.ftp.it"
 USER="nome_utente"
 PASS="password"
-IND="cartella/sottocartella"
-
-#Questi sono i dati relativi al server ftp. la variabile 
-#IND indica il percorso che, sul server, conduce alla cartella "medialooper".
-
+IND="cartella/loopers"
