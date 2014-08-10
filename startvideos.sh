@@ -5,8 +5,7 @@ declare -A audio
 #Make a newline a delimiter instead of a space
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-#source /home/pi/mediaconfig.txt
-source /home/flex/Scrivania/udate6agosto/test/mediaconfig.txt
+source /home/pi/mediaconfig.txt
 selettore=0
 
 #inizio parte video
