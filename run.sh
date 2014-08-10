@@ -2,7 +2,7 @@
 
 clear > /dev/tty1
 
-sleep 2
+sleep 5
 
 clear > /dev/tty1
 
@@ -77,7 +77,7 @@ capperi="$?"
 	then
 		
 		source /home/pi/mediaconfig.txt
-		#check if autostart is enabled
+		#check to see if autostart is enabled
 			if [ $AUTOSTART -eq 1 ]
 			then
 
@@ -94,12 +94,12 @@ capperi="$?"
 						if [ $cippe -eq "0" ]
 						then
      						echo -e "		Aggiornamento in corso....." > /dev/tty1
-							#wget -N -P /home/pi/ --user=$USER --password=$PASS ftp://$HOST/$IND/medialooper/mediaconfig.txt > /dev/tty2
+							wget -N -P /home/pi/ --user=$USER --password=$PASS ftp://$HOST/$IND/$NAME/medialooper/mediaconfig.txt > /dev/tty2
 							lftp -f "
 							open $HOST
 							user $USER $PASS
 							set ftp:ssl-allow no
-							mirror  --exclude mediaconfig.txt --ignore-time --delete --verbose /$IND/medialooper/ /media/USB/
+							mirror  --exclude mediaconfig.txt --ignore-time --delete --verbose /$IND/$NAME/medialooper/ /media/USB/
 							" > /dev/tty1
 							x=10
 						else
@@ -114,12 +114,10 @@ capperi="$?"
 						fi
 					done
 				fi
-				#start slideshow
+				
 				fbi -noverbose -a -t $TRANSIZIONE -device /dev/fb0 -vt 1 -u `find /media/USB/medialooper/immagini -iname "*.*"` & 
-				#start audio-video looper
 				/home/pi/startvideos.sh &
-				#start system update
-				/home/pi/updated.sh &  > /dev/tty2
+				/home/pi/updated.sh &  > /dev/null
 			else
 				echo -e "		Autostart disabilitato. Autenticarsi quindi digitare startx per accedere all'interfaccia grafica." > /dev/tty1
 				exit
